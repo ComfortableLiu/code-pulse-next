@@ -1,0 +1,11 @@
+{
+  "name": "@gobang/backend",
+  "version": "1.0.0",
+  "main": "../../dist/server/index.js",
+  "types": "../../dist/server/dist/index.d.ts",
+  "scripts": {
+    "build": "cross-env BUILD=true rspack build",
+    "dev": "rspack serve",
+    "start": "node dist/main.js"
+  }
+}
