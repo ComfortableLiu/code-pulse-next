@@ -8,7 +8,7 @@ export class UserEntity extends BaseEntity implements IUserDao{
   @PrimaryGeneratedColumn({
     name: 'user_id'
   })
-  useId?: number
+  userId?: number
 
   @Column({
     name: 'nick_name',

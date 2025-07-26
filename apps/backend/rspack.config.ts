@@ -1,14 +1,35 @@
 import { RunScriptWebpackPlugin } from "run-script-webpack-plugin";
-import { Configuration, rspack } from "@rspack/core";
+import { rspack } from "@rspack/core";
+import type { Configuration } from "@rspack/core"
+import { fileURLToPath } from "node:url";
+import path from "path";
+
+// 由于在 ES 模块中没有 __dirname，所以我们需要创建它
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(path.dirname(path.dirname(__filename)));
+const __backend_dirname = path.dirname(__filename);
+
+// 获取当前环境
+// const env = process.env.NODE_ENV || 'development';
+
+// 确定环境文件路径
+// const envPath = path.resolve(path.dirname(__filename), `config/env/.env.${env}`);
+
+// 获取当前环境
+// const isDev = process.env.NODE_ENV === 'development';
 
 const config: Configuration = {
   context: __dirname,
   target: 'node',
   entry: {
-    main: ['@rspack/core/hot/poll?100', './src/main.ts'],
+    main: [path.resolve(__backend_dirname, `./src/index.ts`)],
   },
   resolve: {
-    extensions: ['...', '.ts', '.tsx', '.jsx'],
+    extensions: ['.js', '.ts', '.tsx', '.jsx'],
+    modules: [
+      'node_modules',
+      path.resolve(__dirname, '../..', 'node_modules')
+    ]
   },
   module: {
     rules: [
@@ -66,11 +87,13 @@ const config: Configuration = {
   },
   externals: [
     function (obj, callback) {
-      const resource = obj.request;
+      const resource = obj.request || '';
       const lazyImports = [
         '@nestjs/core',
+        '@nestjs/common',
         '@nestjs/microservices',
         '@nestjs/platform-express',
+        'typeorm',
         'cache-manager',
         'class-validator',
         'class-transformer',
@@ -89,6 +112,7 @@ const config: Configuration = {
         'bson-ext',
         'snappy/package.json',
         'aws4',
+        'app-root-path',
       ];
       if (!lazyImports.includes(resource)) {
         return callback();
@@ -96,10 +120,11 @@ const config: Configuration = {
       try {
         require.resolve(resource);
       } catch (err) {
-        callback(null, resource);
+        callback(err as Error, resource);
       }
       callback();
     },
   ],
 };
-module.exports = config;
+
+export default config

@@ -7,6 +7,7 @@
     "start:dev": "turbo dev --parallel",
     "start:prod": "turbo prod"
   },
+  "workspaces": ["apps/*"],
   "dependencies": {
     "@codemirror/autocomplete": "^6.18.6",
     "@codemirror/commands": "^6.8.1",
@@ -19,14 +20,6 @@
     "@codemirror/state": "^6.5.2",
     "@codemirror/view": "^6.38.1",
     "@icon-park/react": "^1.4.2",
-    "@nestjs/common": "^11.0.1",
-    "@nestjs/config": "^4.0.2",
-    "@nestjs/core": "^11.0.1",
-    "@nestjs/platform-express": "^11.0.1",
-    "@nestjs/platform-socket.io": "^11.1.3",
-    "@nestjs/platform-ws": "^11.1.3",
-    "@nestjs/typeorm": "^11.0.0",
-    "@nestjs/websockets": "^11.1.3",
     "antd": "^5.26.6",
     "codemirror": "^6.0.2",
     "js-base64": "^3.7.7",
@@ -34,16 +27,10 @@
     "qrcode.react": "^4.2.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-router": "^7.7.1",
-    "run-script-webpack-plugin": "^0.2.3"
+    "react-router": "^7.7.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "@nestjs/cli": "^11.0.7",
-    "@nestjs/schematics": "^11.0.0",
-    "@nestjs/testing": "^11.0.1",
-    "@rspack/cli": "^1.3.10",
-    "@rspack/core": "^1.3.10",
     "@tsconfig/node24": "^24.0.1",
     "@types/node": "^24.1.0",
     "@types/react": "^19",

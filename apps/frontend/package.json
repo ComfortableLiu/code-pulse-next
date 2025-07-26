@@ -1,5 +1,5 @@
 {
-  "name": "@gobang/frontend",
+  "name": "@code-pulse-next/frontend",
   "version": "1.0.0",
   "scripts": {
     "dev": "cross-env NODE_ENV=development next dev --turbopack",

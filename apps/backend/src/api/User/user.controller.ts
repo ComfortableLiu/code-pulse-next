@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Post, Query } from '@nestjs/common';
 import { UserService } from './user.service';
-import { IRegisterReq, IUserDao } from "./type";
+import type { IRegisterReq, IUserDao } from "./type";
 import { BusinessException } from "../../interceptors/business.exception";
 
 @Controller('user')

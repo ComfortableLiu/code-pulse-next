@@ -4,7 +4,7 @@ import { GameService } from "../api/Game/game.service";
 
 @WebSocketGateway({
   cors: {
-    origin: `${process.env.CLIENT_HOST}:${process.env.CLIENT_POST}` || 'http://localhost:3000',
+    origin: `${process.env.CLIENT_HOST}:${process.env.CLIENT_PORT}` || 'http://localhost:3000',
     methods: ['GET', 'POST']
   }
 })

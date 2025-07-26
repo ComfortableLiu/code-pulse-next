@@ -7,17 +7,37 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "strict": true,
-    "jsx": "react-jsx",
+    "jsx": "preserve",
     "baseUrl": "./",
     "types": [
       "node"
     ],
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "incremental": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
     "apps/frontend/src",
-    "build/rspack.service.config.ts",
     "build/rspack.client.config.ts",
-    "global.d.ts"
+    "build/rspack.service.config.ts",
+    "global.d.ts",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }

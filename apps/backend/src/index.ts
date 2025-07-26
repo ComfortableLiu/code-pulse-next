@@ -17,7 +17,7 @@ async function bootstrap() {
   // 跨域，用默认就好
   app.enableCors()
 
-  await app.listen(process.env.SERVER_POST ?? 3001)
+  await app.listen(process.env.SERVER_PORT ?? 3001)
 }
 
 bootstrap().then()

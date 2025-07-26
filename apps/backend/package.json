@@ -1,11 +1,37 @@
 {
-  "name": "@gobang/backend",
+  "name": "@code-pulse-next/backend",
   "version": "1.0.0",
   "main": "../../dist/server/index.js",
-  "types": "../../dist/server/dist/index.d.ts",
+  "sideEffects": [
+    "**/*.css",
+    "**/*.less",
+    "**/*.scss"
+  ],
   "scripts": {
     "build": "cross-env BUILD=true rspack build",
     "dev": "rspack serve",
     "start": "node dist/main.js"
+  },
+  "dependencies": {
+    "@nestjs/common": "^11.0.1",
+    "@nestjs/config": "^4.0.2",
+    "@nestjs/core": "^11.0.1",
+    "@nestjs/platform-express": "^11.0.1",
+    "@nestjs/platform-socket.io": "^11.1.3",
+    "@nestjs/platform-ws": "^11.1.3",
+    "@nestjs/typeorm": "^11.0.0",
+    "@nestjs/websockets": "^11.1.3",
+    "mysql2": "^3.14.2",
+    "reflect-metadata": "^0.2.2",
+    "run-script-webpack-plugin": "^0.2.3",
+    "rxjs": "^7.8.2",
+    "typeorm": "^0.3.25"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^11.0.7",
+    "@nestjs/schematics": "^11.0.0",
+    "@nestjs/testing": "^11.0.1",
+    "@rspack/cli": "^1.3.10",
+    "@rspack/core": "^1.3.10"
   }
 }
