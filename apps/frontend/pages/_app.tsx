@@ -1,0 +1,47 @@
+import React, { memo, useEffect } from 'react';
+import { ConfigProvider, Layout } from 'antd';
+import type { AppProps } from 'next/app';
+import theme from './_theme/themeConfig';
+import styles from "./_app.module.scss"
+import MenuView from "./_components/Menu";
+import "../app/main.css"
+import Footer from "./_components/Footer";
+import { useRouter } from "next/router";
+import { maintainFrequentRouteHistory, manageRouteHistory } from "@utils/router";
+
+const App = ({ Component, pageProps }: AppProps) => {
+
+  const router = useRouter()
+
+  const handleRouter = (path: string) => {
+    console.log('llllll', path)
+    // 维护最近历史记录
+    // manageRouteHistory(path)
+    // 维护高频路由历史记录
+    // maintainFrequentRouteHistory(path)
+    // SEO，动态设置元标签
+    // useHead(handleHead(allRoutesMap.get(to.path)!))
+  }
+
+  useEffect(() => {
+    handleRouter(router.pathname)
+  }, [router.pathname])
+
+  return (
+    <ConfigProvider theme={theme}>
+      <div className={styles['app-main-style']}>
+        <header className={styles['app-main-header']}>
+          <MenuView />
+        </header>
+        <main className={styles['app-router-view']}>
+          <Component  {...pageProps} />
+        </main>
+        <footer>
+          <Footer />
+        </footer>
+      </div>
+    </ConfigProvider>
+  )
+}
+
+export default memo(App);

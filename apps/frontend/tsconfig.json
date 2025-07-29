@@ -28,16 +28,25 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "paths": {
+      "@pages/*": [
+        "pages/*"
+      ],
+      "@utils/*": [
+        "utils/*"
+      ],
+      "@router/*": [
+        "router/*"
+      ]
+    }
   },
   "include": [
-    "apps/frontend/src",
-    "build/rspack.client.config.ts",
-    "build/rspack.service.config.ts",
+    ".next/types/**/*.ts",
+    "apps/frontend",
     "global.d.ts",
-    ".next/types/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
+    "**/*.ts",
+    "**/*.tsx",
+    "../../dist/frontend/types/**/*.ts"
   ]
 }

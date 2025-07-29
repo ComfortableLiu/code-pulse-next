@@ -2,25 +2,23 @@
   "name": "@code-pulse-next/backend",
   "version": "1.0.0",
   "main": "../../dist/server/index.js",
+  "types": "../../dist/server/dist/index.d.ts",
   "sideEffects": [
     "**/*.css",
     "**/*.less",
     "**/*.scss"
   ],
   "scripts": {
-    "build": "cross-env BUILD=true rspack build",
-    "dev": "rspack serve",
-    "start": "node dist/main.js"
+    "dev": "cross-env NODE_ENV=development nest start --watch --env-file config/env/.env.development",
+    "prod": "cross-env NODE_ENV=production node dist/index",
+    "build": "cross-env NODE_ENV=production nest build"
   },
   "dependencies": {
     "@nestjs/common": "^11.0.1",
     "@nestjs/config": "^4.0.2",
     "@nestjs/core": "^11.0.1",
     "@nestjs/platform-express": "^11.0.1",
-    "@nestjs/platform-socket.io": "^11.1.3",
-    "@nestjs/platform-ws": "^11.1.3",
     "@nestjs/typeorm": "^11.0.0",
-    "@nestjs/websockets": "^11.1.3",
     "mysql2": "^3.14.2",
     "reflect-metadata": "^0.2.2",
     "run-script-webpack-plugin": "^0.2.3",

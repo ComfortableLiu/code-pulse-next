@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 300px;
+  width: 100%;
+  gap: 8px;
+}
+
+.editor {
+  width: 100%;
+  min-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-top: 6px;
+}
+
+.extension-action {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}

@@ -1,0 +1,46 @@
+.workspace {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 48px;
+  position: relative;
+
+  .form {
+    flex: 1;
+  }
+
+  .qrcode-preview {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .vertical-divider {
+    height: 100%;
+    width: 1px;
+    background-color: #333333;
+  }
+}
+
+.hr-start {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #555;
+  gap: 8px;
+  margin: 24px 0;
+
+  .line {
+    flex: 1;
+    background-color: #DDDDDD;
+    height: 1px;
+  }
+}
+
+.qrcode-canvas {
+  width: 302px;
+  height: 302px;
+  border: 1px solid #CCCCCC;
+}
