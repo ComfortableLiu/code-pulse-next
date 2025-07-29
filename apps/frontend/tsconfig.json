@@ -48,5 +48,8 @@
     "**/*.ts",
     "**/*.tsx",
     "../../dist/frontend/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }

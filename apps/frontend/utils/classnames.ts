@@ -1,4 +1,4 @@
-import { IAnyObj } from "@code-pulse-next/backend/src/type";
+import { IAnyObj } from "@utils/type";
 
 /**
  * 动态classname，会自动将string类型的拼接，并将object中为false的过滤掉，然后将为true的key拼接到一起

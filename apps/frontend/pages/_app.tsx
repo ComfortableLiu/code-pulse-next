@@ -1,13 +1,12 @@
 import React, { memo, useEffect } from 'react';
-import { ConfigProvider, Layout } from 'antd';
+import { ConfigProvider } from 'antd';
 import type { AppProps } from 'next/app';
-import theme from './_theme/themeConfig';
+import theme from '../app/theme/themeConfig';
 import styles from "./_app.module.scss"
 import MenuView from "./_components/Menu";
 import "../app/main.css"
 import Footer from "./_components/Footer";
 import { useRouter } from "next/router";
-import { maintainFrequentRouteHistory, manageRouteHistory } from "@utils/router";
 
 const App = ({ Component, pageProps }: AppProps) => {
 

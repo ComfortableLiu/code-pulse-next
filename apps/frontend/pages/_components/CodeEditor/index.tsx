@@ -1,4 +1,4 @@
-import { CSSProperties, memo, ReactNode, useEffect, useImperativeHandle, useRef, useState } from "react";
+import { CSSProperties, memo, ReactNode, Ref, useEffect, useImperativeHandle, useRef, useState } from "react";
 import { Button } from "antd";
 import { LanguageSupport } from "@codemirror/language";
 import { javascript } from "@codemirror/lang-javascript";
@@ -8,8 +8,8 @@ import { css } from "@codemirror/lang-css";
 import { markdown } from "@codemirror/lang-markdown";
 import styles from "./styles.module.scss";
 import { formatCode } from "@utils/format-utils";
-import { Decoration, EditorView } from "@codemirror/view";
-import { EditorSelection, EditorState, StateEffect, StateField } from "@codemirror/state";
+import { Decoration, DecorationSet, EditorView } from "@codemirror/view";
+import { EditorSelection, EditorState, RangeSet, StateEffect, StateField } from "@codemirror/state";
 import { basicSetup } from "codemirror";
 import { autocompletion } from "@codemirror/autocomplete";
 
@@ -25,7 +25,7 @@ interface ICodeEditorProps {
   onChange: (value: string) => void
 
   onFormatError?: (error?: FormatError) => void
-  ref?: ICodeEditorRef
+  ref?: Ref<ICodeEditorRef>
   style?: CSSProperties
   containerStyle?: CSSProperties
   showFormat?: boolean
@@ -102,14 +102,14 @@ const CodeEditor = (props: ICodeEditorProps) => {
   const [editorView, setEditorView] = useState<EditorView>()
 
   // 定义添加和移除高亮的状态效果
-  const addHighlight = useRef(StateEffect.define({
-    map: (range, change) => range.map(change)
+  const addHighlight = useRef(StateEffect.define<DecorationSet | null>({
+    map: (range, change) => range && range.map(change)
   }))
 
   const removeHighlight = useRef(StateEffect.define())
 
   // 创建管理高亮装饰的状态字段
-  const highlightField = useRef(StateField.define({
+  const highlightField = useRef(StateField.define<DecorationSet>({
     create() {
       return Decoration.none
     },
@@ -117,8 +117,8 @@ const CodeEditor = (props: ICodeEditorProps) => {
       // 处理添加和移除高亮的效果
       deco = deco.map(tr.changes)
       for (const effect of tr.effects) {
-        if (effect.is(addHighlight.current)) {
-          deco = deco.update({ add: [effect.value] })
+        if (effect.is(addHighlight.current) && effect.value) {
+          deco = deco.update({ add: [(effect.value as never)] })
         } else if (effect.is(removeHighlight.current)) {
           deco = Decoration.none
         }
@@ -129,7 +129,8 @@ const CodeEditor = (props: ICodeEditorProps) => {
   }))
 
   useEffect(() => {
-    const a = new EditorView({
+    if (!editorContainer.current) return
+    setEditorView(new EditorView({
       state: EditorState.create({
         doc: props.value || '',
         extensions: [
@@ -151,9 +152,8 @@ const CodeEditor = (props: ICodeEditorProps) => {
           }),
         ].filter(a => !!a)
       }),
-      parent: editorContainer.current
-    })
-    setEditorView(a)
+      parent: editorContainer.current!
+    }))
     return () => {
       if (editorView) {
         editorView.destroy()
@@ -170,13 +170,13 @@ const CodeEditor = (props: ICodeEditorProps) => {
     }
   }, [props.value])
 
-  useImperativeHandle(props.ref, () => ({
-    doFormatCode
+  useImperativeHandle<ICodeEditorRef, ICodeEditorRef>(props.ref, () => ({
+    doFormatCode,
   }))
 
   // 格式化代码
   const doFormatCode = async () => {
-    if (!editorView) return
+    if (!editorView) return null
     let formattedText
     try {
       const currentText = editorView.state.doc.toString()
@@ -211,10 +211,9 @@ const CodeEditor = (props: ICodeEditorProps) => {
     })
     const deco = highlightTheme.range(lineObj.from)
 
-    console.log('llllll-123123', lineObj, deco)
     editorView.dispatch({
       effects: [
-        addHighlight.current.of(deco),
+        addHighlight.current.of(RangeSet.of(deco)),
         EditorView.scrollIntoView(EditorSelection.range(editorView.state.doc.line(line).from, editorView.state.doc.line(line).to)),
       ]
     })
