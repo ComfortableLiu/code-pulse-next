@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "dev": "cross-env NODE_ENV=development nest start --watch --env-file config/env/.env.development",
-    "prod": "cross-env NODE_ENV=production node dist/index",
+    "prod": "cross-env NODE_ENV=production node ../../dist/backend/src/index.js",
     "build": "cross-env NODE_ENV=production nest build"
   },
   "dependencies": {
