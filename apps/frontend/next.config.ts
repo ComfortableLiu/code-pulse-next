@@ -6,7 +6,6 @@ const nextConfig: NextConfig = {
   sassOptions: {
     implementation: 'sass-embedded',
   },
-  distDir: '../../dist/frontend',
 }
 
 export default nextConfig;
