@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "cross-env NODE_ENV=development next dev --turbopack",
-    "prod": "cd ../../dist/frontend & cross-env NODE_ENV=production next start",
+    "prod": "cross-env NODE_ENV=production next start",
     "build": "cross-env NODE_ENV=production next build",
     "postbuild": "next-sitemap"
   },

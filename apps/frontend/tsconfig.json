@@ -42,12 +42,14 @@
     }
   },
   "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "../../dist/.next/types/**/*.ts",
+    "../../dist/frontend/types/**/*.ts",
     ".next/types/**/*.ts",
     "apps/frontend",
     "global.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "../../dist/frontend/types/**/*.ts"
+    "../../dist/frontend/.next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"
