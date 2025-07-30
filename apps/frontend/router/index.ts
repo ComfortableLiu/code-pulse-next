@@ -10,6 +10,13 @@ const homepageRoutes: IRouteItem = {
   name: '首页',
   key: 'homepage',
   alias: ['/home', '/homepage', '/index'],
+  meta: {
+    seoHead: {
+      title: 'Code Pulse - 开发者工具平台',
+      description: 'Code Pulse 为开发者提供一系列实用的小工具，包括JSON格式化、Base64编码、SHA加密、二维码生成等，帮助提升开发效率',
+      keywords: '开发者工具,在线工具,JSON格式化,Base64编码,SHA加密,二维码生成'
+    }
+  }
 }
 
 export const allRoutes = [

@@ -1,6 +1,7 @@
 import { Localstorage } from "@utils/storage";
 import { allRoutesWithAliasMap, flatRoutes } from "../router";
 import { IRouteItem } from "@router/type";
+import type { Metadata } from "next";
 
 // 基础key
 export const ROUTE_HISTORY_KEY = 'code-pulse-route-'
@@ -82,6 +83,17 @@ export interface IRouteFrequencyRecord {
 }
 
 export type IRouteFrequencyRecordList = IRouteFrequencyRecord[]
+
+// 添加SEO处理函数
+export const handleHead = (routeItem?: IRouteItem): Metadata => {
+  // 默认SEO配置
+  return {
+    title: 'Code Pulse - 开发者工具平台',
+    description: 'Code Pulse 致力于为广大开发者提供一系列实用的小工具，帮助大家提升开发效率、简化日常工作流程。',
+    keywords: '开发者工具,在线工具,编码解码,数据格式化,二维码生成',
+    ...(routeItem?.meta?.seoHead || {}),
+  }
+}
 
 /**
  * 维护路由高频历史访问记录，需要设置一个最高频率，不然会出现一个极值访问把其他功能挤得上不来

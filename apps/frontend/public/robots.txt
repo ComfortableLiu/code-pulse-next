@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://code-pulse.cn
+
+# Sitemaps
+Sitemap: https://code-pulse.cn/sitemap.xml
