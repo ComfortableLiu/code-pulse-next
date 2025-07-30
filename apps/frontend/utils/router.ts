@@ -1,5 +1,5 @@
 import { Localstorage } from "@utils/storage";
-import { flatRoutes } from "../router";
+import { allRoutesWithAliasMap, flatRoutes } from "../router";
 import { IRouteItem } from "@router/type";
 
 // 基础key
@@ -27,35 +27,36 @@ const routeBlackList = [
 /**
  * 检查是否是黑名单路由
  */
-function checkIsRouteBlackList(route: IRouteItem) {
-  return routeBlackList.includes(route.path)
+function checkIsRouteBlackList(path: string) {
+  return routeBlackList.includes(path)
 }
 
 /**
  * 检查是否是内部拥有的路由
  */
-function checkIsInternalRoute(route: IRouteItem) {
-  return !!flatRoutes.get(route.path)
+function checkIsInternalRoute(path: string) {
+  return !!flatRoutes.get(path)
 }
 
 /**
  * 检查路由合法性，包括黑名单检查和内部路由检查
  */
-function checkRouteValidity(route: IRouteItem) {
-  return !checkIsRouteBlackList(route) && checkIsInternalRoute(route)
+function checkRouteValidity(path: string) {
+  return !checkIsRouteBlackList(path) && checkIsInternalRoute(path)
 }
 
 /**
  * 维护路由历史访问记录
  */
-export function manageRouteHistory(to: IRouteItem) {
-  if (!checkRouteValidity(to)) return
+export function manageRouteHistory(path: `/${string}`) {
+  const to = allRoutesWithAliasMap.get(path)
+  if (!to || !checkRouteValidity(path)) return
   const list = Localstorage.get<IRouteItem[]>(RECENT_VISITS_KEY) || []
   // 找一下是不是已经有记录了
-  const index = list.findIndex(item => item.path === to.path)
+  const index = list.findIndex(item => item.path === path)
   if (index < 0) {
     // 如果没有记录，那就放到最开头
-    list.unshift(to)
+    list.unshift({ ...to, path })
   } else {
     // 如果已经有记录了，那就提升到最开头
     const [matchedRoute] = list.splice(index, 1);
@@ -85,15 +86,16 @@ export type IRouteFrequencyRecordList = IRouteFrequencyRecord[]
 /**
  * 维护路由高频历史访问记录，需要设置一个最高频率，不然会出现一个极值访问把其他功能挤得上不来
  */
-export function maintainFrequentRouteHistory(to: IRouteItem) {
-  if (!checkRouteValidity(to)) return
+export function maintainFrequentRouteHistory(path: `/${string}`) {
+  const to = allRoutesWithAliasMap.get(path)
+  if (!to || !checkRouteValidity(path)) return
   const MAX_FREQUENT_ROUTES = 10; // 设置最大频率
   const list = Localstorage.get<IRouteFrequencyRecordList>(FREQUENT_ROUTES_KEY) || [];
 
-  const index = list.findIndex(item => item.route.path === to.path);
+  const index = list.findIndex(item => item.route.path === path);
 
   if (index < 0) {
-    const obj = { route: to, count: 1 }
+    const obj = { route: { ...to, path, }, count: 1 }
     const index = list.findIndex(item => item.count === 1)
     if (index >= 0) {
       list.splice(index, 0, obj)

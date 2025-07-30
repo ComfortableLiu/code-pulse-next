@@ -4,5 +4,5 @@ export interface IRouteItem {
   key: string,
   name: string,
   children?: IRouteItem[]
-  hasComponent?: boolean
+  notComponent?: boolean
 }

@@ -59,8 +59,9 @@ const QRCode = () => {
     <Fragment>
       <h1>二维码生成</h1>
       <div className={styles.workspace}>
-        <Form className="form">
+        <Form className={styles.form}>
           <Form.Item
+            required
             label="内容"
             rules={[{ required: true }]}
           >
@@ -73,6 +74,7 @@ const QRCode = () => {
           </Form.Item>
 
           <Form.Item
+            required
             label="尺寸"
             rules={[{ required: true }]}
           >
@@ -109,7 +111,7 @@ const QRCode = () => {
             </div>
           </Form.Item>
 
-          <div className="more-form">
+          <div className={styles['more-form']}>
             <Form.Item
               label="边缘空白"
             >
@@ -119,13 +121,13 @@ const QRCode = () => {
               />
             </Form.Item>
 
-            <div className="hr-start">
-              <div className="line" />
+            <div className={styles['hr-start']}>
+              <div className={styles.line} />
               高级设置
-              <div className="line" />
+              <div className={styles.line} />
             </div>
 
-            <div className="advanced-settings">
+            <div className={styles['advanced-settings']}>
               <Form.Item
                 help={(
                   <span>
@@ -177,6 +179,7 @@ const QRCode = () => {
               </Form.Item>
 
               <Form.Item
+                required={showImageSettings}
                 label="图片地址"
                 style={{ display: showImageSettings ? 'block' : 'none' }}
                 rules={[{ required: showImageSettings }]}
@@ -239,6 +242,7 @@ const QRCode = () => {
               </Form.Item>
 
               <Form.Item
+                required={showImageSettings}
                 label="logo宽度"
                 style={{ display: showImageSettings ? 'block' : 'none' }}
                 rules={[{ required: showImageSettings }]}
@@ -255,6 +259,7 @@ const QRCode = () => {
               </Form.Item>
 
               <Form.Item
+                required={showImageSettings}
                 label="logo高度"
                 style={{ display: showImageSettings ? 'block' : 'none' }}
                 rules={[{ required: showImageSettings }]}
@@ -289,12 +294,12 @@ const QRCode = () => {
             </div>
           </div>
         </Form>
-        <div className="vertical-divider" />
-        <div className="qrcode-preview">
+        <div className={styles['vertical-divider']} />
+        <div className={styles['qrcode-preview']}>
           <h2>二维码预览</h2>
           {content ?
             <Fragment>
-              <div className="qrcode-canvas">
+              <div className={styles['qrcode-canvas']}>
                 <QRCodeCanvas
                   boostLevel
                   title={"标题"}

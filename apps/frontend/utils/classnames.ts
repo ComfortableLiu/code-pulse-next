@@ -5,7 +5,7 @@ import { IAnyObj } from "@utils/type";
  * @param args
  */
 export function classnames(...args: (string | IAnyObj)[]) {
-  return args.map(arg => {
+  return args.filter(Boolean).map(arg => {
     if (typeof arg === 'string') {
       return arg
     }

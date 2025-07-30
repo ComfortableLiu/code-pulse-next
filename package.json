@@ -5,7 +5,7 @@
   "scripts": {
     "start:build": "turbo build",
     "start:dev": "turbo dev --parallel",
-    "start:prod": "turbo prod"
+    "start:prod": "turbo prod --parallel"
   },
   "workspaces": [
     "apps/*"

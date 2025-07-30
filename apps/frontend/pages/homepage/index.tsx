@@ -10,21 +10,20 @@ import {
   getRecentRouteHistory, IRouteFrequencyRecordList,
   RECENT_VISITS_KEY
 } from "@utils/router";
-import { classnames } from "@utils/classnames";
 
 const Homepage = () => {
 
-// 高频路由数量
+  // 高频路由数量
   const FREQUENT_ROUTE_HISTORY_NUM = 10;
-// 最近访问路由数量
+  // 最近访问路由数量
   const RECENT_ROUTE_HISTORY_NUM = 10;
 
-// 最近访问路由列表
+  // 最近访问路由列表
   const [recentRouteHistoryList, setRecentRouteHistoryList] = useState<IRouteItem[]>()
-// 高频访问路由列表
+  // 高频访问路由列表
   const [frequentRouteHistoryList, setFrequentRouteHistoryList] = useState<IRouteFrequencyRecordList>()
 
-// Localstorage变化监听函数
+  // Localstorage变化监听函数
   const handleStorageChange = (e?: StorageEvent) => {
     if (e && ![RECENT_VISITS_KEY, FREQUENT_ROUTES_KEY].includes(e.key || '')) return
     setRecentRouteHistoryList(getRecentRouteHistory(RECENT_ROUTE_HISTORY_NUM))
@@ -60,7 +59,7 @@ const Homepage = () => {
       </Link>
     ))
     return (
-      <div className={classnames(styles['base-component'], styles['recently-used'])}>
+      <div className={styles['base-component']}>
         <h2 className={styles.title}>最近使用</h2>
         <div className={styles['content-area']}>
           {linkList}
@@ -86,7 +85,7 @@ const Homepage = () => {
       </Link>
     ))
     return (
-      <div className={classnames(styles['base-component'], styles['recently-used'])}>
+      <div className={styles['base-component']}>
         <h2 className={styles.title}>最常用</h2>
         <div className={styles['content-area']}>
           {linkList}
