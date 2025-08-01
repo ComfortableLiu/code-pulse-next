@@ -10,4 +10,6 @@ Monorepo 模式
 ## ~~Why Rspack？~~
 ~~其实 Nest.js 可以直接用 tsc 编译，但是想要扩展的话，还是需要一个专业打包工具，所以引用了 Rspack。另外现在谁家好人还在用 Webpack（bushi）~~
 
-我错了，现在 Rspack 对 Nest.js 支持也是一坨，还是回归 tsc 了
+ps: 我错了，现在 Rspack 对 Nest.js 支持也是一坨，还是回归 tsc 了
+pss: 我又错了，Next 真的不好用，本项目先这样吧，不在继续维护了
+
