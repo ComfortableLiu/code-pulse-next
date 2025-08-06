@@ -1,4 +1,3 @@
-import FirstVisitWelcome from "../_components/FirstVisitWelcome";
 import { Fragment, memo, useEffect, useMemo, useState } from "react";
 import styles from "./styles.module.scss";
 import { Button } from "antd";
@@ -7,9 +6,11 @@ import { IRouteItem } from "@router/type";
 import {
   FREQUENT_ROUTES_KEY,
   getFrequentRouteHistory,
-  getRecentRouteHistory, IRouteFrequencyRecordList,
+  getRecentRouteHistory,
+  IRouteFrequencyRecordList,
   RECENT_VISITS_KEY
 } from "@utils/router";
+import TryYourLuck from "@pages/_components/TryYourLuck";
 
 const Homepage = () => {
 
@@ -96,14 +97,13 @@ const Homepage = () => {
 
   return (
     <Fragment>
-      <FirstVisitWelcome style={{ marginTop: 48 }} />
-      <div
-        v-if="recentRouteHistoryList?.length || frequentRouteHistoryList?.length"
-        className={styles['main-feature-area']}
-      >
-        {recentRouteHistoryListView}
-        {frequentRouteHistoryListView}
-      </div>
+      <TryYourLuck />
+      {recentRouteHistoryList?.length || frequentRouteHistoryList?.length ?
+        <div className={styles['main-feature-area']}>
+          {recentRouteHistoryListView}
+          {frequentRouteHistoryListView}
+        </div>
+        : null}
     </Fragment>
   )
 }

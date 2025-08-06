@@ -19,9 +19,8 @@ const JsonFormat = () => {
         language="json"
         value={jsonStr}
         onChange={setJsonStr}
-        style={{ maxHeight: 300 }}
+        editorStyle={{ maxHeight: 300 }}
         onFormatError={handleFormatError}
-
       >
         <Button onClick={() => setJsonStr('')}>清空</Button>
       </CodeEditor>
