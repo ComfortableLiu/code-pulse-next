@@ -1,7 +1,7 @@
 import { Fragment, memo, useCallback, useRef, useState } from "react";
 import CodeEditor, { FormatError, ICodeEditorRef } from "@pages/_components/CodeEditor";
 import { Alert, Button } from "antd";
-import { IAnyObj } from "@code-pulse-next/backend/src/type";
+import { IAnyObj } from "@utils/type";
 
 const JsonToTypescript = () => {
 
