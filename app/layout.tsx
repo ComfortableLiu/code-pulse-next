@@ -1,4 +1,4 @@
-import MyDocument from "../pages/_document";
+import MyDocument from "@pages/_document";
 
 export default function RootLayout() {
   return (
