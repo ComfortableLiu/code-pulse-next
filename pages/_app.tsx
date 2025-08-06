@@ -9,7 +9,7 @@ import Footer from "./_components/Footer";
 import { useRouter } from "next/router";
 import { handleHead, maintainFrequentRouteHistory, manageRouteHistory } from "@utils/router";
 import { allRoutesMap } from "@router/index";
-import type { Metadata } from "next";
+import '@ant-design/v5-patch-for-react-19';
 
 const App = ({ Component, pageProps }: AppProps) => {
 
