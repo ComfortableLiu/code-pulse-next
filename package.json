@@ -6,7 +6,7 @@
     "publish": "sh ./publish.sh",
     "dev": "cross-env NODE_ENV=development next dev --turbopack",
     "prod": "cross-env NODE_ENV=production next start",
-    "build": "cross-env NODE_ENV=production next build",
+    "build": "cross-env NODE_ENV=production next build --turbopack",
     "postbuild": "next-sitemap"
   },
   "devDependencies": {

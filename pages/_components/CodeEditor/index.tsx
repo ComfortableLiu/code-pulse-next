@@ -9,7 +9,7 @@ import { markdown } from "@codemirror/lang-markdown";
 import styles from "./styles.module.scss";
 import { formatCode } from "@utils/format-utils";
 import { Decoration, DecorationSet, EditorView } from "@codemirror/view";
-import { EditorSelection, EditorState, RangeSet, StateEffect, StateField } from "@codemirror/state";
+import { EditorSelection, EditorState, StateEffect, StateField } from "@codemirror/state";
 import { basicSetup } from "codemirror";
 import { autocompletion } from "@codemirror/autocomplete";
 
@@ -213,6 +213,8 @@ const CodeEditor = (props: ICodeEditorProps) => {
 
     editorView.dispatch({
       effects: [
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-expect-error
         addHighlight.current.of(deco),
         EditorView.scrollIntoView(EditorSelection.range(editorView.state.doc.line(line).from, editorView.state.doc.line(line).to)),
       ]
