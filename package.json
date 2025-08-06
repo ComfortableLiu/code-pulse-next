@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "publish": "sh ./publish.sh",
     "dev": "cross-env NODE_ENV=development next dev --turbopack",
     "prod": "cross-env NODE_ENV=production next start",
     "build": "cross-env NODE_ENV=production next build",

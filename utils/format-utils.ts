@@ -21,10 +21,13 @@ import prettierPluginEstree from "prettier/plugins/estree";
 export async function formatCode(text: string, parser: 'babel' | 'json' | 'html' | 'css' | 'markdown' | 'text' | 'typescript') {
   if (!parser || parser === 'text') return text
   return prettier.format(text, {
-    parser: parser,
+    parser,
     tabWidth: 2,
     singleQuote: true,
     semi: false,
+    useTabs: false,
+    trailingComma: "all",
+    printWidth: 1,
     plugins: [
       parserBabel,
       parserHtml,

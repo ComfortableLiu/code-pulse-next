@@ -1,9 +1,10 @@
 import { CSSProperties, memo } from "react";
+import styles from "./styles.module.scss";
 
 const FirstVisitWelcome = ({ style }: { style?: CSSProperties }) => {
   return (
     <div
-      className="container"
+      className={styles.container}
       style={style}
     >
       <h1>欢迎来到Code Pulse！</h1>

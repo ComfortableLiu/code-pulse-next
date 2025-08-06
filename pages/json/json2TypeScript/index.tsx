@@ -88,7 +88,7 @@ const JsonToTypescript = () => {
         onChange={setJsonStr}
         language="json"
         showFormat
-        style={{ maxHeight: 300 }}
+        editorStyle={{ maxHeight: 300 }}
         onFormatError={handleFormatError}
       >
         <Button className="button" onClick={() => setJsonStr('')}>清空</Button>
@@ -124,7 +124,7 @@ const JsonToTypescript = () => {
         onChange={setTypescriptStr}
         language="typescript"
         show-format
-        style={{ maxHeight: 300 }}
+        editorStyle={{ maxHeight: 300 }}
       />
     </Fragment>
   )

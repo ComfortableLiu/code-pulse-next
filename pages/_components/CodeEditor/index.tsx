@@ -26,7 +26,7 @@ interface ICodeEditorProps {
 
   onFormatError?: (error?: FormatError) => void
   ref?: Ref<ICodeEditorRef>
-  style?: CSSProperties
+  editorStyle?: CSSProperties
   containerStyle?: CSSProperties
   showFormat?: boolean
   children?: ReactNode
@@ -213,7 +213,7 @@ const CodeEditor = (props: ICodeEditorProps) => {
 
     editorView.dispatch({
       effects: [
-        addHighlight.current.of(RangeSet.of(deco)),
+        addHighlight.current.of(deco),
         EditorView.scrollIntoView(EditorSelection.range(editorView.state.doc.line(line).from, editorView.state.doc.line(line).to)),
       ]
     })
@@ -227,7 +227,7 @@ const CodeEditor = (props: ICodeEditorProps) => {
       <div
         ref={editorContainer}
         className={styles.editor}
-        style={props.style}
+        style={props.editorStyle}
       />
       <div className={styles['extension-action']}>
         {props.showFormat ?
