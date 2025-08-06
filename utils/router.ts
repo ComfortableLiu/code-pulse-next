@@ -1,5 +1,5 @@
 import { Localstorage } from "@utils/storage";
-import { allRoutesWithAliasMap, flatRoutes } from "../router";
+import { allRoutesWithAliasMap, flatRoutes } from "@router/index";
 import { IRouteItem } from "@router/type";
 import type { Metadata } from "next";
 

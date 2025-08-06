@@ -1,7 +1,7 @@
 import { Tooltip } from "antd";
 import { Github, Mail, Wechat } from "@icon-park/react";
 import Image from "next/image";
-import WeChatQRCode from "public/WeChat.png";
+import WeChatQRCode from "../../../public/WeChat.png";
 import { memo } from "react";
 import styles from "./styles.module.scss";
 
