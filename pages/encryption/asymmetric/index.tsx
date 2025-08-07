@@ -213,7 +213,7 @@ const AsymmetricEncryption = () => {
       if (algorithm === 'RSA') {
         try {
           const result = await decrypt(cipherText, privateKey);
-          setOriginalText(result);
+          setCipherText(result);
         } catch (error) {
           message.error('解密失败，请检查密文和密钥是否正确');
         }
