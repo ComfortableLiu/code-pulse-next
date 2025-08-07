@@ -27,6 +27,15 @@
         font-size: 14px;
         color: #FFFFFF;
       }
+
+      .beian {
+        color: #CCCCCC;
+        transition: all 0.2s ease;
+
+        &:hover {
+          color: #EEEEEE;
+        }
+      }
     }
 
     .logo-image {
