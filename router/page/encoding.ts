@@ -27,6 +27,17 @@ const encryption: IRouteItem = {
         keywords: 'URL编码,URL解码,URL转义,encodeURIComponent,decodeURIComponent'
       }
     }
+  }, {
+    path: '/utf8',
+    name: 'UTF-8编码',
+    key: 'utf8',
+    meta: {
+      seoHead: {
+        title: 'UTF-8编码/解码工具 - Code Pulse',
+        description: '在线UTF-8编码和解码工具，帮助开发者处理UTF-8字符编码问题',
+        keywords: 'UTF-8编码,UTF-8解码,字符编码,Unicode编码'
+      }
+    }
   }]
 }
 
