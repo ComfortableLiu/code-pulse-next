@@ -38,6 +38,17 @@ const encryption: IRouteItem = {
         keywords: '非对称加密,RSA,DSA,ECC,DH,公钥私钥,数字签名,密钥交换,在线加密工具'
       }
     }
+  }, {
+    path: '/js-eval',
+    name: 'JS Eval 加解密',
+    key: 'js-eval',
+    meta: {
+      seoHead: {
+        title: 'JS Eval 加解密工具 - Code Pulse',
+        description: '在线 JS Eval 加解密工具，支持 JavaScript 代码的 eval 加密和解密，帮助开发者进行简单的代码混淆处理',
+        keywords: 'JS加密,eval加密,JavaScript混淆,代码加密,在线加密工具'
+      }
+    }
   }]
 }
 
