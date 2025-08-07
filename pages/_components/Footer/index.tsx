@@ -5,6 +5,7 @@ import WeChatQRCode from '../../../public/WeChat.png'
 import { Github, Mail, Wechat } from "@icon-park/react";
 import { Tooltip } from "antd";
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer = () => {
 
@@ -38,6 +39,15 @@ const Footer = () => {
           </div>
           <div>
             声明：本网站部分工具是站长整合网上已有工具、开源包等，并全部遵循原有协议发布，著作权归属原作者或是团队。如有问题请联系站长。
+          </div>
+          <div>
+            <a
+              className={styles.beian}
+              href="https://beian.miit.gov.cn/"
+              target="_blank"
+            >
+              鲁ICP备2025178336号-1
+            </a>
           </div>
         </div>
         <div className={styles['logo-image']}>
