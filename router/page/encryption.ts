@@ -16,7 +16,18 @@ const encryption: IRouteItem = {
         keywords: 'SHA加密,SHA-1,SHA-256,SHA-512,HMAC-SHA,数据加密,在线加密工具'
       }
     }
+  }, {
+    path: '/symmetric',
+    name: '对称加密',
+    key: 'symmetric',
+    meta: {
+      seoHead: {
+        title: '对称加密工具 - Code Pulse',
+        description: '在线对称加密工具，支持AES、DES、RC4、Rabbit、TripleDes加密算法，帮助开发者快速进行数据加密解密处理',
+        keywords: '对称加密,AES,DES,RC4,Rabbit,TripleDes,数据加密,在线加密工具'
+      }
+    }
   }]
 }
 
-export default encryption
+export default encryption;

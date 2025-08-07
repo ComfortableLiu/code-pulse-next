@@ -1,0 +1,13 @@
+.operation-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .btn-group {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+  }
+}
