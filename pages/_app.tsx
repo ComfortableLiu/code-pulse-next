@@ -10,6 +10,7 @@ import { useRouter } from "next/router";
 import { handleHead, maintainFrequentRouteHistory, manageRouteHistory } from "@utils/router";
 import { allRoutesMap } from "@router/index";
 import '@ant-design/v5-patch-for-react-19';
+import Head from "next/head";
 
 const App = ({ Component, pageProps }: AppProps) => {
 
@@ -30,9 +31,11 @@ const App = ({ Component, pageProps }: AppProps) => {
 
   return (
     <ConfigProvider theme={theme}>
-      <title>{metadata.title as string || ''}</title>
-      <meta name="description" content={metadata.description || ''} />
-      <meta name="keywords" content={metadata.keywords as string || ''} />
+      <Head>
+        <title>{metadata.title as string || ''}</title>
+        <meta name="description" content={metadata.description || ''} />
+        <meta name="keywords" content={metadata.keywords as string || ''} />
+      </Head>
       <div className={styles['app-main-style']}>
         <header className={styles['app-main-header']}>
           <MenuView />
