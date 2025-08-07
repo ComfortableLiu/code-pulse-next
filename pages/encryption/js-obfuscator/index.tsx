@@ -1,37 +1,11 @@
-import { Fragment, useCallback, useMemo, useState, useRef } from "react";
-import { Button, message, Typography, Card, Row, Col, Switch, Slider, InputNumber, Input } from "antd";
+import { Fragment, useCallback, useMemo, useRef, useState } from "react";
+import { Button, Card, Col, Input, InputNumber, message, Row, Slider, Switch, Typography } from "antd";
 import type { SliderMarks } from 'antd/es/slider';
 import CodeEditor, { ICodeEditorRef } from "@pages/_components/CodeEditor";
 import styles from "./styles.module.scss";
+import { ObfuscatorOptions } from "javascript-obfuscator";
 
 const { Title, Text, Paragraph } = Typography;
-
-// 定义混淆选项类型
-interface ObfuscatorOptions {
-  compact: boolean;
-  controlFlowFlattening: boolean;
-  controlFlowFlatteningThreshold: number;
-  deadCodeInjection: boolean;
-  deadCodeInjectionThreshold: number;
-  debugProtection: boolean;
-  debugProtectionInterval: number;
-  disableConsoleOutput: boolean;
-  identifierNamesGenerator: 'hexadecimal' | 'mangled' | 'mangled-shuffled' | 'randomized' | 'randomized-hexadecimal' | 'dictionary';
-  identifiersDictionary: string[];
-  identifiersPrefix: string;
-  numbersToExpressions: boolean;
-  renameGlobals: boolean;
-  renameProperties: boolean;
-  renamePropertiesMode: 'safe' | 'unsafe';
-  simplify: boolean;
-  splitStrings: boolean;
-  splitStringsChunkLength: number;
-  stringArray: boolean;
-  stringArrayEncoding: Array<'base64' | 'rc4' | 'none'>;
-  stringArrayThreshold: number;
-  transformObjectKeys: boolean;
-  unicodeEscapeSequence: boolean;
-}
 
 const JsObfuscator = () => {
   // 原始代码
@@ -412,7 +386,7 @@ const JsObfuscator = () => {
                   </div>
                   <select
                     value={options.identifierNamesGenerator}
-                    onChange={(e) => updateOption('identifierNamesGenerator', e.target.value as any)}
+                    onChange={(e) => updateOption('identifierNamesGenerator', e.target.value as never)}
                     className={styles['option-select']}
                   >
                     <option value="hexadecimal">十六进制</option>
