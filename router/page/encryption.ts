@@ -27,6 +27,17 @@ const encryption: IRouteItem = {
         keywords: '对称加密,AES,DES,RC4,Rabbit,TripleDes,数据加密,在线加密工具'
       }
     }
+  }, {
+    path: '/asymmetric',
+    name: '非对称加密',
+    key: 'asymmetric',
+    meta: {
+      seoHead: {
+        title: '非对称加密工具 - Code Pulse',
+        description: '在线非对称加密工具，支持RSA、DSA、ECC、DH加密算法，提供公钥私钥生成、加密解密、数字签名等功能',
+        keywords: '非对称加密,RSA,DSA,ECC,DH,公钥私钥,数字签名,密钥交换,在线加密工具'
+      }
+    }
   }]
 }
 
