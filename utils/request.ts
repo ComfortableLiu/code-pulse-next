@@ -1,5 +1,5 @@
-import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
-import { generateSignature, generateNonce } from './signature';
+import axios, { AxiosInstance, AxiosResponse, InternalAxiosRequestConfig } from 'axios';
+import { generateNonce, generateSignature } from './signature';
 
 // 密钥 - 在实际项目中应该从环境变量中获取
 const SECRET_KEY = process.env.NEXT_PUBLIC_API_SECRET_KEY || '';
@@ -15,7 +15,7 @@ const apiClient: AxiosInstance = axios.create({
 
 // 请求拦截器 - 添加签名
 apiClient.interceptors.request.use(
-  async (config: AxiosRequestConfig) => {
+  async (config: InternalAxiosRequestConfig) => {
     // 生成签名所需参数
     const timestamp = Date.now();
     const nonce = generateNonce();
