@@ -38,6 +38,27 @@
       ],
       "@router/*": [
         "router/*"
+      ],
+      "@lib/*": [
+        "lib/*"
+      ],
+      "@entities/*": [
+        "db/entities/*"
+      ],
+      "@migrations/*": [
+        "db/migrations/*"
+      ],
+      "@subscribers/*": [
+        "db/subscribers/*"
+      ],
+      "@controllers/*": [
+        "server/controllers/*"
+      ],
+      "@services/*": [
+        "server/services/*"
+      ],
+      "@models/*": [
+        "server/models/*"
       ]
     }
   },

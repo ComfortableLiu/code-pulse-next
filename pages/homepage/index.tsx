@@ -11,7 +11,6 @@ import {
   RECENT_VISITS_KEY
 } from "@utils/router";
 import TryYourLuck from "@pages/_components/TryYourLuck";
-import apiClient from "@utils/request";
 
 const Homepage = () => {
 
@@ -43,14 +42,18 @@ const Homepage = () => {
       }
     }
   }, [])
-
-  useEffect(() => {
-    apiClient.get('/api/test').then(res => {
-      console.log(res.data)
-    }).catch(err => {
-      console.error(err)
-    })
-  }, []);
+  //
+  // useEffect(() => {
+  //   apiClient.get('/api/test', {
+  //     data: {
+  //       a: 123123
+  //     }
+  //   }).then(res => {
+  //     console.log(res.data)
+  //   }).catch(err => {
+  //     console.error(err)
+  //   })
+  // }, []);
 
   // 最近使用模块
   const recentRouteHistoryListView = useMemo(() => {
