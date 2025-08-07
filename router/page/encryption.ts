@@ -49,6 +49,17 @@ const encryption: IRouteItem = {
         keywords: 'JS加密,eval加密,JavaScript混淆,代码加密,在线加密工具'
       }
     }
+  }, {
+    path: '/js-obfuscator',
+    name: 'JS 混淆',
+    key: 'js-obfuscator',
+    meta: {
+      seoHead: {
+        title: 'JavaScript 代码混淆工具 - Code Pulse',
+        description: '在线 JavaScript 代码混淆工具，使用 javascript-obfuscator 对 JavaScript 代码进行高强度混淆，保护您的源代码',
+        keywords: 'JavaScript混淆,代码保护,源代码保护,js-obfuscator,代码混淆工具,在线混淆工具'
+      }
+    }
   }]
 }
 
