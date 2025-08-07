@@ -212,7 +212,7 @@ const AsymmetricEncryption = () => {
 
       if (algorithm === 'RSA') {
         try {
-          const result = await decrypt(cipherText, privateKey);
+          const result = await decrypt(originalText, privateKey);
           setCipherText(result);
         } catch (error) {
           message.error('解密失败，请检查密文和密钥是否正确');
@@ -221,7 +221,7 @@ const AsymmetricEncryption = () => {
         message.info(`${algorithm}算法在浏览器环境中不支持解密操作，请使用专业工具`);
       }
     }
-  }, [algorithm, cipherText, decrypt, encrypt, mode, originalText, privateKey, publicKey]);
+  }, [algorithm, decrypt, encrypt, mode, originalText, privateKey, publicKey]);
 
   // 执行签名或验证操作
   const handleSignOperation = useCallback(async () => {
