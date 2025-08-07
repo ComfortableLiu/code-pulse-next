@@ -1,5 +1,5 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://code-pulse.cn',
+  siteUrl: process.env.NEXT_PUBLIC_API_BASE_URL || 'https://code-pulse.cn',
   generateRobotsTxt: true,
 }

@@ -2,12 +2,12 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { verifySignature } from './signature';
 
 // 密钥 - 在实际项目中应该从环境变量中获取
-const SECRET_KEY = process.env.API_SECRET_KEY || 'your-secret-key';
+const SECRET_KEY = process.env.NEXT_PUBLIC_API_SECRET_KEY || '';
 
 /**
  * 签名验证中间件
- * @param handler 
- * @returns 
+ * @param handler
+ * @returns
  */
 export function withSignatureVerification(handler: (req: NextApiRequest, res: NextApiResponse) => Promise<void> | void) {
   return async (req: NextApiRequest, res: NextApiResponse) => {

@@ -23,7 +23,9 @@
 - DB_USER=数据库登录用户名
 - DB_PASS=数据库登录密码
 - DB_NAME=数据库名
-- API_SECRET_KEY=api接口验签密钥
+- NEXT_PUBLIC_API_SECRET_KEY=api接口验签密钥 
+- NEXT_PUBLIC_API_BASE_URL=域名，线上就用线上的，本地就用localhost就好，注意，需要包括端口号
+
 
 
 # Why？

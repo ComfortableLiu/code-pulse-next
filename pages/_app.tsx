@@ -10,7 +10,6 @@ import { useRouter } from "next/router";
 import { handleHead, maintainFrequentRouteHistory, manageRouteHistory } from "@utils/router";
 import { allRoutesMap } from "@router/index";
 import '@ant-design/v5-patch-for-react-19';
-import { initDatabase } from '@utils/database';
 
 const App = ({ Component, pageProps }: AppProps) => {
 
@@ -26,14 +25,6 @@ const App = ({ Component, pageProps }: AppProps) => {
   useEffect(() => {
     handleRouter(router.pathname)
   }, [router.pathname])
-
-  useEffect(() => {
-    // TODO 数据库连接有问题需要解决
-    // 初始化数据库连接
-    // initDatabase().catch(error => {
-    //   console.error('数据库初始化失败:', error);
-    // });
-  }, []);
 
   const metadata = useMemo(() => handleHead(allRoutesMap.get(router.pathname)), [router.pathname])
 
