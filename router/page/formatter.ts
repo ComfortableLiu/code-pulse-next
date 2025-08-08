@@ -27,6 +27,17 @@ const formatterRoutes: IRouteItem = {
         keywords: 'HTML格式化,代码格式化,HTML美化,在线工具'
       }
     }
+  }, {
+    path: '/css',
+    name: 'CSS格式化',
+    key: 'css-formatter',
+    meta: {
+      seoHead: {
+        title: 'CSS代码格式化工具 - Code Pulse',
+        description: '在线CSS代码格式化工具，支持CSS格式化、普通压缩和完全压缩，使用标准规则格式化您的CSS代码，使其更易读和维护',
+        keywords: 'CSS格式化,CSS压缩,CSS美化,在线工具'
+      }
+    }
   }]
 }
 

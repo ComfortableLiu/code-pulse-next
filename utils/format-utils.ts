@@ -11,6 +11,9 @@ import * as parserMarkdown from 'prettier/parser-markdown';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 import * as parserTypescript from 'prettier/parser-typescript';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
+import * as parserPostcss from 'prettier/parser-postcss';
 import prettierPluginEstree from "prettier/plugins/estree";
 
 /**
@@ -34,6 +37,7 @@ export async function formatCode(text: string, parser: 'babel' | 'json' | 'html'
       parserMarkdown,
       prettierPluginEstree,
       parserTypescript,
+      parserPostcss,
     ],
   });
 }
