@@ -27,6 +27,17 @@ const jsonRoutes: IRouteItem = {
         keywords: 'JSON转TypeScript,TypeScript接口生成,JSON解析,TypeScript工具'
       }
     }
+  }, {
+    path: '/json2other',
+    key: 'json2other',
+    name: 'JSON转其他语言',
+    meta: {
+      seoHead: {
+        title: 'JSON转其他语言工具 - Code Pulse',
+        description: '在线JSON转其他语言工具，支持将JSON数据结构转换为Python、Java、C++等编程语言的数据结构',
+        keywords: 'JSON转换,JSON转Python,JSON转Java,JSON转C++,编程语言转换'
+      }
+    }
   }]
 }
 

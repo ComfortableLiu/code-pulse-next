@@ -1,0 +1,160 @@
+
+// /Users/xiaoyao/Documents/Projects/code-pulse-next/pages/encryption/jwt/styles.module.scss
+.jwt-tool {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+}
+
+.tool-container {
+  display: flex;
+  gap: 20px;
+}
+
+.input-section {
+  flex: 1;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+
+  .form-group {
+    margin-bottom: 15px;
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    textarea, input, select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+  }
+}
+
+.output-section {
+  flex: 1;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+
+  h3 {
+    margin-top: 0;
+    color: #555;
+  }
+
+  .result {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+
+    h4 {
+      margin-top: 0;
+      color: #495057;
+    }
+
+    pre {
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 4px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      margin: 0;
+    }
+
+    textarea {
+      width: 100%;
+      resize: vertical;
+      font-family: monospace;
+    }
+  }
+}
+
+.introduction {
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  h3 {
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+    border-bottom: 1px solid #e1e1e1;
+    padding-bottom: 10px;
+  }
+
+  h4 {
+    color: #34495e;
+    margin: 20px 0 10px;
+    font-size: 1.1em;
+  }
+
+  p {
+    line-height: 1.6;
+    color: #34495e;
+    font-size: 0.95em;
+  }
+
+  ul {
+    padding-left: 20px;
+    margin: 10px 0;
+
+    li {
+      margin-bottom: 8px;
+      line-height: 1.5;
+      color: #34495e;
+      font-size: 0.95em;
+
+      &:before {
+        content: "•";
+        color: #3498db;
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+      }
+    }
+  }
+
+  strong {
+    color: #2c3e50;
+  }
+}
+
+.success {
+  color: green;
+  font-weight: bold;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .tool-container {
+    flex-direction: column;
+  }
+}

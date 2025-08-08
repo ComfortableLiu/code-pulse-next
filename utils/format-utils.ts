@@ -27,7 +27,7 @@ export async function formatCode(text: string, parser: 'babel' | 'json' | 'html'
     semi: false,
     useTabs: false,
     trailingComma: "all",
-    printWidth: 1,
+    printWidth: parser === 'json' ? 1 : undefined,
     plugins: [
       parserBabel,
       parserHtml,

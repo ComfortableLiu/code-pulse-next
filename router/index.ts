@@ -4,6 +4,7 @@ import encodingRoutes from "./page/encoding";
 import aboutRoutes from "./page/about";
 import qrcodeRoutes from "./page/qr-code";
 import randomRoutes from "./page/random";
+import formatterRoutes from "./page/formatter";
 import type { IRouteItem } from "./type";
 
 const homepageRoutes: IRouteItem = {
@@ -27,6 +28,7 @@ export const allRoutes = [
   encodingRoutes,
   qrcodeRoutes,
   randomRoutes,
+  formatterRoutes,
   aboutRoutes,
 ]
 

@@ -1,0 +1,98 @@
+.operation-container {
+  margin-top: 20px;
+}
+
+.section {
+  margin-bottom: 12px;
+
+  .section-title {
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.options-section {
+  margin: 20px 0;
+}
+
+.option-group {
+  margin-bottom: 16px;
+}
+
+.option-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0f0f0;
+
+  &:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+}
+
+.option-label {
+  flex: 1;
+  margin-right: 12px;
+}
+
+.option-description {
+  display: block;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.option-select {
+  min-width: 120px;
+  padding: 4px 8px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.feature-list,
+.warning-list {
+  padding-left: 20px;
+
+  li {
+    margin-bottom: 8px;
+  }
+}
+
+.warning-list {
+  li {
+    color: #ff4d4f;
+  }
+}
+
+:global(.ant-card) {
+  margin-bottom: 16px;
+}
+
+:global(.ant-slider) {
+  margin: 8px 0;
+}
+
+@media (max-width: 768px) {
+  .btn-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-group button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
