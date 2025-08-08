@@ -6,6 +6,7 @@ import { json } from "@codemirror/lang-json";
 import { html } from "@codemirror/lang-html";
 import { css } from "@codemirror/lang-css";
 import { markdown } from "@codemirror/lang-markdown";
+import { sql } from "@codemirror/lang-sql";
 import styles from "./styles.module.scss";
 import { formatCode } from "@utils/format-utils";
 import { Decoration, DecorationSet, EditorView } from "@codemirror/view";
@@ -13,7 +14,7 @@ import { EditorSelection, EditorState, StateEffect, StateField } from "@codemirr
 import { basicSetup } from "codemirror";
 import { autocompletion } from "@codemirror/autocomplete";
 
-type CodeType = 'css' | 'html' | 'javascript' | 'typescript' | 'json' | 'markdown' | 'text'
+type CodeType = 'css' | 'html' | 'javascript' | 'typescript' | 'json' | 'markdown'|'sql' | 'text'
 
 export interface ICodeEditorRef {
   doFormatCode: () => Promise<string | null>
@@ -59,7 +60,7 @@ const CodeEditor = (props: ICodeEditorProps) => {
   const langConfig: {
     [key in CodeType]: {
       extension?: LanguageSupport,
-      format: 'babel' | 'json' | 'html' | 'css' | 'markdown' | 'text' | 'typescript'
+      format: 'babel' | 'json' | 'html' | 'css' | 'markdown' | 'text' | 'typescript' | 'sql'
     }
   } = {
     javascript: {
@@ -95,6 +96,10 @@ const CodeEditor = (props: ICodeEditorProps) => {
         jsx: true
       }),
       format: 'typescript'
+    },
+    sql: {
+      extension: sql(),
+      format: 'sql'
     }
   }
 

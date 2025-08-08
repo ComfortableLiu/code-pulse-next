@@ -38,6 +38,17 @@ const formatterRoutes: IRouteItem = {
         keywords: 'CSS格式化,CSS压缩,CSS美化,在线工具'
       }
     }
+  }, {
+    path: '/sql',
+    name: 'SQL格式化',
+    key: 'sql-formatter',
+    meta: {
+      seoHead: {
+        title: 'SQL代码格式化工具 - Code Pulse',
+        description: '在线SQL代码格式化工具，支持SQL格式化、普通压缩和完全压缩，使用标准规则格式化您的SQL代码，使其更易读和维护',
+        keywords: 'SQL格式化,SQL压缩,SQL美化,在线工具'
+      }
+    }
   }]
 }
 
