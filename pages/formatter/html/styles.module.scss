@@ -1,0 +1,207 @@
+.container {
+  padding: 20px 0;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 1rem;
+  color: #666;
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  margin-bottom: 30px;
+}
+
+.editorContainer {
+  margin-bottom: 20px;
+}
+
+.editorHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.editorTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 10px;
+}
+
+.copyButton,
+.clearButton {
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.copyButton {
+  background-color: #f5f5f5;
+  border: 1px solid #d9d9d9;
+  color: #333;
+
+  &:hover {
+    background-color: #e6e6e6;
+  }
+}
+
+.clearButton {
+  background-color: #ff4d4f;
+  border: 1px solid #ff4d4f;
+  color: #fff;
+
+  &:hover {
+    background-color: #ff7875;
+  }
+}
+
+.languageSelector {
+  margin-bottom: 16px;
+}
+
+.radioGroup {
+  display: flex;
+  gap: 20px;
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.radioInput {
+  margin-right: 8px;
+}
+
+.actionButton {
+  padding: 10px 24px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 500;
+}
+
+.disabled {
+  background-color: #f5f5f5;
+  color: #ccc;
+  cursor: not-allowed;
+  border: 1px solid #d9d9d9;
+}
+
+.enabled {
+  background-color: #1890ff;
+  color: #fff;
+  border: 1px solid #1890ff;
+
+  &:hover {
+    background-color: #40a9ff;
+    border-color: #40a9ff;
+  }
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.error {
+  margin-top: 16px;
+  padding: 12px;
+  background-color: #fff2f0;
+  border: 1px solid #ffccc7;
+  border-radius: 4px;
+  color: #ff4d4f;
+}
+
+.featuresTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.feature {
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.featureBlue {
+  background-color: #e6f7ff;
+  border: 1px solid #91d5ff;
+}
+
+.featureGreen {
+  background-color: #f6ffed;
+  border: 1px solid #b7eb8f;
+}
+
+.featurePurple {
+  background-color: #f9f0ff;
+  border: 1px solid #d3adf7;
+}
+
+.featureTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.featureDescription {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .editorHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .buttonGroup {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .featuresGrid {
+    grid-template-columns: 1fr;
+  }
+}

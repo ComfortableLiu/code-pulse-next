@@ -11,15 +11,25 @@ import * as parserMarkdown from 'prettier/parser-markdown';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 import * as parserTypescript from 'prettier/parser-typescript';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
+import * as parserPostcss from 'prettier/parser-postcss';
 import prettierPluginEstree from "prettier/plugins/estree";
 
 /**
  * 格式化代码
  * @param text
- * @param parser - 'babel' | 'json' | 'html' | 'css' | 'markdown' | 'text' | 'typescript'
+ * @param parser - 'babel' | 'json' | 'html' | 'css' | 'markdown' | 'text' | 'typescript' | 'sql'
  */
-export async function formatCode(text: string, parser: 'babel' | 'json' | 'html' | 'css' | 'markdown' | 'text' | 'typescript') {
+export async function formatCode(text: string, parser: 'babel' | 'json' | 'html' | 'css' | 'markdown' | 'text' | 'typescript' | 'sql') {
+  // 如果是SQL，使用sql-formatter库
+  if (parser === 'sql') {
+    const sqlFormatter = await import('sql-formatter');
+    return sqlFormatter.format(text);
+  }
+  
   if (!parser || parser === 'text') return text
+  
   return prettier.format(text, {
     parser,
     tabWidth: 2,
@@ -34,6 +44,7 @@ export async function formatCode(text: string, parser: 'babel' | 'json' | 'html'
       parserMarkdown,
       prettierPluginEstree,
       parserTypescript,
+      parserPostcss,
     ],
   });
 }
