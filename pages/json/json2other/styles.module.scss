@@ -1,0 +1,47 @@
+.container {
+  padding: 20px;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.languageSelector {
+  margin-bottom: 16px;
+
+  label {
+    margin-right: 8px;
+  }
+}
+
+.editorContainer {
+  margin-bottom: 16px;
+}
+
+.resultContainer {
+  margin: 16px 0;
+
+  .resultHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  .resultTitle {
+    font-size: 18px;
+    font-weight: bold;
+  }
+}
+
+.actionButtons {
+  margin: 10px 0;
+
+  button {
+    margin-right: 8px;
+  }
+}
+
+.errorAlert {
+  margin: 10px 0;
+}
