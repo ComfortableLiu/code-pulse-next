@@ -60,6 +60,17 @@ const encryption: IRouteItem = {
         keywords: 'JavaScript混淆,代码保护,源代码保护,js-obfuscator,代码混淆工具,在线混淆工具'
       }
     }
+  }, {
+    path: '/file-hash',
+    name: '文件哈希计算',
+    key: 'file-hash',
+    meta: {
+      seoHead: {
+        title: '文件哈希值计算工具 - Code Pulse',
+        description: '在线文件哈希值计算工具，支持MD5、SHA-1、SHA-256、SHA-384、SHA-512等多种哈希算法，所有计算均在本地完成，保证文件安全',
+        keywords: '文件哈希,MD5,SHA-1,SHA-256,SHA-512,哈希计算,文件校验,本地计算,文件完整性'
+      }
+    }
   }]
 }
 

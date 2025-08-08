@@ -1,0 +1,95 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.section {
+  margin-bottom: 30px;
+  padding: 20px;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
+.dragger {
+  width: 100%;
+}
+
+.uploadDragger {
+  margin-bottom: 16px;
+}
+
+.uploadDragger :global(.ant-upload.ant-upload-drag) {
+  background: #ffffff;
+}
+
+.fileList {
+  margin-top: 16px;
+}
+
+.fileItem {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.fileItem:last-child {
+  border-bottom: none;
+}
+
+.results {
+  margin-top: 24px;
+}
+
+.resultCard {
+  margin-bottom: 16px;
+  padding: 16px;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+  background-color: #fafafa;
+}
+
+.resultCard:last-child {
+  margin-bottom: 0;
+}
+
+.resultTitle {
+  margin-bottom: 12px !important;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.resultContent {
+  padding: 0 8px;
+}
+
+.hashItem {
+  margin-bottom: 12px;
+}
+
+.hashItem:last-child {
+  margin-bottom: 0;
+}
+
+.hashValueContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin-top: 4px;
+}
+
+.hashValue {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+  word-break: break-all;
+  flex: 1;
+}
