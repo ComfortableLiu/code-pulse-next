@@ -38,6 +38,17 @@ const encryption: IRouteItem = {
         keywords: 'UTF-8编码,UTF-8解码,字符编码,Unicode编码'
       }
     }
+  }, {
+    path: '/unicode',
+    name: 'Unicode编码',
+    key: 'unicode',
+    meta: {
+      seoHead: {
+        title: 'Unicode编码/解码工具 - Code Pulse',
+        description: '在线Unicode编码和解码工具，帮助开发者处理Unicode字符编码问题',
+        keywords: 'Unicode编码,Unicode解码,字符编码,\\u转义'
+      }
+    }
   }]
 }
 
