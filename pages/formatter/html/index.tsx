@@ -164,7 +164,7 @@ const HtmlFormatter: React.FC = () => {
           </div>
 
           {/* 操作按钮 */}
-          <div className="flex justify-center mt-6 space-x-4 flex-wrap">
+          <div className={styles.buttonContainer}>
             <button
               onClick={formatCodeHandler}
               disabled={isLoading || !inputCode.trim()}

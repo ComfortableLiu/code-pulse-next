@@ -138,77 +138,75 @@ const CssFormatter: React.FC = () => {
           <p className={styles.description}>快速格式化您的CSS代码，使其更易读和维护</p>
         </div>
 
-        <div className={styles.card}>
-          <div className={styles.editorContainer}>
-            <div className={styles.editorHeader}>
-              <h2 className={styles.editorTitle}>代码编辑器</h2>
-              <div className={styles.buttonGroup}>
-                <button
-                  onClick={handleCopy}
-                  className={styles.copyButton}
-                >
-                  复制
-                </button>
-                <button
-                  onClick={handleClear}
-                  className={styles.clearButton}
-                >
-                  清空
-                </button>
-              </div>
+        <div className={styles.editorContainer}>
+          <div className={styles.editorHeader}>
+            <h2 className={styles.editorTitle}>代码编辑器</h2>
+            <div className={styles.buttonGroup}>
+              <button
+                onClick={handleCopy}
+                className={styles.copyButton}
+              >
+                复制
+              </button>
+              <button
+                onClick={handleClear}
+                className={styles.clearButton}
+              >
+                清空
+              </button>
             </div>
-
-            <CodeEditor
-              ref={editorRef}
-              value={inputCode}
-              language="css"
-              onChange={setInputCode}
-              onFormatError={handleFormatError}
-              showFormat={false}
-              editorStyle={{ maxHeight: 400 }}
-            />
           </div>
 
-          {/* 操作按钮 */}
-          <div className="flex justify-center mt-6 space-x-4 flex-wrap">
-            <button
-              onClick={formatCodeHandler}
-              disabled={isLoading || !inputCode.trim()}
-              className={`${styles.actionButton} ${
-                isLoading || !inputCode.trim() ? styles.disabled : styles.enabled
-              }`}
-            >
-              {isLoading ? '格式化中...' : '格式化代码'}
-            </button>
-
-            <button
-              onClick={normalCompressHandler}
-              disabled={isLoading || !inputCode.trim()}
-              className={`${styles.actionButton} ${
-                isLoading || !inputCode.trim() ? styles.disabled : styles.enabled
-              }`}
-            >
-              {isLoading ? '压缩中...' : '普通压缩'}
-            </button>
-
-            <button
-              onClick={fullCompressHandler}
-              disabled={isLoading || !inputCode.trim()}
-              className={`${styles.actionButton} ${
-                isLoading || !inputCode.trim() ? styles.disabled : styles.enabled
-              }`}
-            >
-              {isLoading ? '压缩中...' : '完全压缩'}
-            </button>
-          </div>
-
-          {/* 错误信息 */}
-          {error && (
-            <div className={styles.error}>
-              {error}
-            </div>
-          )}
+          <CodeEditor
+            ref={editorRef}
+            value={inputCode}
+            language="css"
+            onChange={setInputCode}
+            onFormatError={handleFormatError}
+            showFormat={false}
+            editorStyle={{ maxHeight: 400 }}
+          />
         </div>
+
+        {/* 操作按钮 */}
+        <div className={styles.buttonContainer}>
+          <button
+            onClick={formatCodeHandler}
+            disabled={isLoading || !inputCode.trim()}
+            className={`${styles.actionButton} ${
+              isLoading || !inputCode.trim() ? styles.disabled : styles.enabled
+            }`}
+          >
+            {isLoading ? '格式化中...' : '格式化代码'}
+          </button>
+
+          <button
+            onClick={normalCompressHandler}
+            disabled={isLoading || !inputCode.trim()}
+            className={`${styles.actionButton} ${
+              isLoading || !inputCode.trim() ? styles.disabled : styles.enabled
+            }`}
+          >
+            {isLoading ? '压缩中...' : '普通压缩'}
+          </button>
+
+          <button
+            onClick={fullCompressHandler}
+            disabled={isLoading || !inputCode.trim()}
+            className={`${styles.actionButton} ${
+              isLoading || !inputCode.trim() ? styles.disabled : styles.enabled
+            }`}
+          >
+            {isLoading ? '压缩中...' : '完全压缩'}
+          </button>
+        </div>
+
+        {/* 错误信息 */}
+        {error && (
+          <div className={styles.error}>
+            {error}
+          </div>
+        )}
 
         {/* 功能介绍 */}
         <div className={styles.card}>

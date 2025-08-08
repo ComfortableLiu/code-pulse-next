@@ -125,6 +125,14 @@
   }
 }
 
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
 .error {
   margin-top: 16px;
   padding: 12px;
