@@ -71,6 +71,17 @@ const encryption: IRouteItem = {
         keywords: '文件哈希,MD5,SHA-1,SHA-256,SHA-512,哈希计算,文件校验,本地计算,文件完整性'
       }
     }
+  }, {
+    path: '/jwt',
+    name: 'JWT加解密',
+    key: 'jwt',
+    meta: {
+      seoHead: {
+        title: 'JWT加解密工具 - Code Pulse',
+        description: '在线JWT加解密工具，支持JWT Token的生成、解码和验证，帮助开发者快速处理JSON Web Token',
+        keywords: 'JWT,JWT加密,JWT解密,JSON Web Token,Token生成,Token验证,在线JWT工具'
+      }
+    }
   }]
 }
 
